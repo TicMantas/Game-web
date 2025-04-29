@@ -1,11 +1,27 @@
-
-import './App.css'
+import { Grid, GridItem, Show } from "@chakra-ui/react";
+import "./App.css";
 
 function App() {
-
   return (
-    <div></div>
-  )
+    <Grid
+      templateAreas={{
+        base: `"nav" "main"`,
+        lg: `"nav nav" "aside main"`,
+      }}
+    >
+      <GridItem area="nav" bg="coral">
+        Nav
+      </GridItem>
+      <Show above="lg">
+        <GridItem area="aside" bg="blue">
+          Aside
+        </GridItem>
+      </Show>
+      <GridItem area="main" bg="gold">
+        Main
+      </GridItem>
+    </Grid>
+  );
 }
 
-export default App
+export default App;
