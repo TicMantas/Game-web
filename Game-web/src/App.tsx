@@ -17,7 +17,7 @@ function App() {
           Aside
         </GridItem>
       </Show>
-      <GridItem area="main" bg="orange">
+      <GridItem area="main" bg="white">
         Main
       </GridItem>
     </Grid>
