@@ -13,11 +13,11 @@ function App() {
         Nav
       </GridItem>
       <Show above="lg">
-        <GridItem area="aside" bg="blue">
+        <GridItem area="aside" bg="orange">
           Aside
         </GridItem>
       </Show>
-      <GridItem area="main" bg="white">
+      <GridItem area="main" bg="blue">
         Main
       </GridItem>
     </Grid>
