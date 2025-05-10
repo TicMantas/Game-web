@@ -1,3 +1,5 @@
+//this is an import from axios to fetch the API from the web we got our own API key to fetch the data...
+
 import axios from "axios";
 
 export default axios.create({

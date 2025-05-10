@@ -1,3 +1,5 @@
+// this component is responsible for our game critics and how we display it
+
 import { Badge } from "@chakra-ui/react";
 
 interface Props{

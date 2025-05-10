@@ -1,3 +1,5 @@
+// this component responsible how our platforms is been displayed I choose to be an Icon instead of words 
+
 import {
   FaWindows,
   FaPlaystation,

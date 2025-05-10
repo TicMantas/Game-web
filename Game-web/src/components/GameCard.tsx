@@ -1,3 +1,5 @@
+// this component is 
+
 import { Game } from '../hooks/useGames'
 import { Card, CardBody, Heading, HStack, Image } from '@chakra-ui/react';
 import PlatformIconsList from './PlatformIconsList';
