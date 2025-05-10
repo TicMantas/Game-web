@@ -1,9 +1,10 @@
-// this component is 
+// this component is Gamecard component and whats displayed on
 
 import { Game } from '../hooks/useGames'
 import { Card, CardBody, Heading, HStack, Image } from '@chakra-ui/react';
 import PlatformIconsList from './PlatformIconsList';
 import CriticScore from './CriticScore';
+import getCroppedImage from '../Service/image-url';
 
 interface Props {
     game: Game;
@@ -12,7 +13,8 @@ interface Props {
 const GameCard = ({game} : Props) => {
   return (
     <Card borderRadius={10} overflow='hidden'>
-      <Image src={game.background_image} />
+      <Image src={
+       getCroppedImage(game.background_image)} />
       <CardBody>
         <Heading fontSize="2xl">{game.name}</Heading>
         <HStack justify="space-between">
