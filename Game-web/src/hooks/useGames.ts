@@ -29,22 +29,28 @@ interface FetchGamesResponse {
 const useGames = () => {
   const [games, setGames] = useState<Game[]>([]);
   const [error, setError] = useState("");
+  const [isLoading, setLoading] = useState(false)
 
   useEffect(() => {
     const controller = new AbortController();
+    setLoading(true); // Loading is true when we uploading the games and its not showed on the page yet
     apiClient
       .get<FetchGamesResponse>("/games", { signal: controller.signal })// get all the games from the API
-      .then((res) => setGames(res.data.results))// then we get a response from the API with a result
+      .then((res) => {
+        setGames(res.data.results);// then we get a response from the API with a result
+        setLoading(false); // Loading is set to false when game is uploaded then it will remove loading from the page
+  })
       .catch((err) => { // and then we catch an error if there is one while we fetching the data if we made a mistake for example
         // /xgames we will receive an error which means something is wrong while we fetching 
         if (err instanceof CanceledError) return;
+        setLoading(false); // Loading will switch off when error occurs
         setError(err.message);
       });
 
     return () => controller.abort();
   }, []);
 
-  return { games, error };
+  return { games, error, isLoading };
 }; 
 
 export default useGames;
