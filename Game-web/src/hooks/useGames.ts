@@ -1,6 +1,3 @@
-import { useEffect, useState } from "react";
-import apiClient from "../Service/api-client";
-import { CanceledError } from "axios";
 import useData from "./useData";
 
 // An inteface Platforms let us see what Platforms can be used for that specific game
