@@ -1,4 +1,5 @@
 import useData from "./useData";
+import { Genres } from "./useGenre";
 
 // An inteface Platforms let us see what Platforms can be used for that specific game
 export interface Platforms {
@@ -21,6 +22,6 @@ export interface Game {
 
 
 // Custom made hook to take everything we need from the API to disegn the website as we need :D
-const useGames = () => useData<Game>("/games")
+const useGames = (selectedGenre: Genres | null) => useData<Game>("/games", {params: {genres: selectedGenre?.id}}, [selectedGenre?.id])
 
 export default useGames;

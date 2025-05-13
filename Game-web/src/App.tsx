@@ -3,8 +3,13 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
 import Genre from "./components/Genre";
+import { useState } from "react";
+import { Genres } from "./hooks/useGenre";
 
 function App() {
+
+  const [selectedGenre, setSelectedGenre] = useState<Genres | null>(null)
+
   return (
     <Grid
       templateAreas={{
@@ -22,11 +27,11 @@ function App() {
       </GridItem>
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
-          <Genre />
+          <Genre onSelectGenre={(genre) => setSelectedGenre(genre)} />
         </GridItem>
       </Show>
       <GridItem area="main">
-        <GameGrid />
+        <GameGrid selectedGenre={selectedGenre}/>
       </GridItem>
     </Grid>
   );
