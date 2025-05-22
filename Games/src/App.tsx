@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <p>Labas Vakaras</p>
+      <p>Labas Vakaras Lietuva</p>
     </>
   )
 }
