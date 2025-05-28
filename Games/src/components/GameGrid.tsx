@@ -6,7 +6,7 @@ import type { GameQuery } from "../App";
 import useGames from "../hooks/useGames";
 
 interface Props{
-  gameQuery: GameQuery | null;
+  gameQuery: GameQuery;
 }
 
 const GameGrid = ({gameQuery} : Props) => {
